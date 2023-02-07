@@ -11,7 +11,7 @@ public class GestorViajes {
 		Scanner scan = new Scanner(System.in);
 		int opcion_menu;
 
-		do {
+			Menuss.mostrarMenuPrincipal();
 			opcion_menu = Integer.parseInt(scan.nextLine());
 
 			switch (opcion_menu) {
@@ -34,7 +34,6 @@ public class GestorViajes {
 				System.out.println("Opcion incorrecta!");
 			}
 
-		} while (opcion_menu != Menuss.SALIR);
 		scan.close();
 		
 		
