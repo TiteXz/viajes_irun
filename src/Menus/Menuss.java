@@ -4,25 +4,25 @@ public class Menuss {
 
 	//declaracion de constantes (final) para las opciones
 	
-	final int GESTOR_CLIENTES = 1;
-	final int GESTOR_HABITACIONES = 2;
-	final int GESTOR_HOTELES = 3;
-	final int GESTOR_RESERVAS = 4;
+	public final int GESTOR_CLIENTES = 1;
+	public final int GESTOR_HABITACIONES = 2;
+	public final int GESTOR_HOTELES = 3;
+	public final int GESTOR_RESERVAS = 4;
 	
-	final int DAR_DE_ALTA = 1;
-	final int DAR_DE_BAJA = 2;
-	final int INFORMACION = 3;
+	public final int DAR_DE_ALTA = 1;
+	public final int DAR_DE_BAJA = 2;
+	public final int INFORMACION = 3;
 	
-	final int RESERVAR = 1;
-	final int CANCELAR_RESERVA = 2;
+	public final int RESERVAR = 1;
+	public final int CANCELAR_RESERVA = 2;
 	
-	final int NUEVO_HOTEL = 1;
-	final int ELIMINAR_HOTEL = 2;
+	public final int NUEVO_HOTEL = 1;
+	public final int ELIMINAR_HOTEL = 2;
 	
-	final int NUEVA_HABITACION = 1;
-	final int ELIMINAR_HABITACION = 2;
+	public final int NUEVA_HABITACION = 1;
+	public final int ELIMINAR_HABITACION = 2;
 	
-	final int SALIR = 0;
+	public final int SALIR = 0;
 
 	
 	public void mostrarMenuPrincipal() {
