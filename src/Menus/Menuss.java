@@ -25,7 +25,7 @@ public class Menuss {
 	public final static int SALIR = 0;
 
 	
-	public void mostrarMenuPrincipal() {
+	public static void mostrarMenuPrincipal() {
 		System.out.println("------MENU-------");
 		System.out.println(GESTOR_CLIENTES + ". Mostrar menu de clientes");
 		System.out.println(GESTOR_HABITACIONES + ". Mostrar menu de habitaciones");
@@ -35,7 +35,7 @@ public class Menuss {
 		System.out.println("Elije una de las opciones");
 	}	
 	
-	public void mostrarMenuClientes() {
+	public static void mostrarMenuClientes() {
 		System.out.println("------MENU-------");
 		System.out.println(DAR_DE_ALTA + ". Dar de alta un cliente");
 		System.out.println(DAR_DE_BAJA + ". Dar de baja un cliente");
@@ -44,7 +44,7 @@ public class Menuss {
 		System.out.println("Elije una de las opciones");
 	}	
 	
-	public void mostrarMenuReservas() {
+	public static void mostrarMenuReservas() {
 		System.out.println("------MENU-------");
 		System.out.println(RESERVAR + ". Hacer una reserva");
 		System.out.println(CANCELAR_RESERVA + ". Cancelar una reserva");
@@ -52,7 +52,7 @@ public class Menuss {
 		System.out.println("Elije una de las opciones");
 	}	
 	
-	public void mostrarMenuHoteles() {
+	public static void mostrarMenuHoteles() {
 		System.out.println("------MENU-------");
 		System.out.println(NUEVO_HOTEL + ". Añadir un nuevo hotel");
 		System.out.println(ELIMINAR_HOTEL + ". Eliminar un hotel");
@@ -60,7 +60,7 @@ public class Menuss {
 		System.out.println("Elije una de las opciones");
 	}	
 	
-	public void mostrarMenuHabitaciones() {
+	public static void mostrarMenuHabitaciones() {
 		System.out.println("------MENU-------");
 		System.out.println(NUEVA_HABITACION + ". Añadir una habitación");
 		System.out.println(ELIMINAR_HABITACION + ". Eliminar una habitación");
