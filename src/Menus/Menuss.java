@@ -3,6 +3,12 @@ package Menus;
 public class Menuss {
 
 	//declaracion de constantes (final) para las opciones
+	
+	final int GESTOR_CLIENTES = 1;
+	final int GESTOR_HABITACIONES = 2;
+	final int GESTOR_HOTELES = 3;
+	final int GESTOR_RESERVAS = 4;
+	
 	final int DAR_DE_ALTA = 1;
 	final int DAR_DE_BAJA = 2;
 	final int INFORMACION = 3;
@@ -18,6 +24,16 @@ public class Menuss {
 	
 	final int SALIR = 0;
 
+	
+	public void mostrarMenuPrincipal() {
+		System.out.println("------MENU-------");
+		System.out.println(GESTOR_CLIENTES + ". Mostrar menu de clientes");
+		System.out.println(GESTOR_HABITACIONES + ". Mostrar menu de habitaciones");
+		System.out.println(GESTOR_HOTELES + ". Mostrar menu de hoteles");
+		System.out.println(GESTOR_RESERVAS + ". Mostrar menu de reservas");
+		System.out.println(SALIR + ". Salir");
+		System.out.println("Elije una de las opciones");
+	}	
 	
 	public void mostrarMenuClientes() {
 		System.out.println("------MENU-------");
