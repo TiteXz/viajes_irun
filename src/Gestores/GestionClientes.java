@@ -10,11 +10,12 @@ public class GestionClientes {
 
 	public static void run(Scanner sc){
 	GBDD gbd = new GBDD();
-	Menuss.mostrarMenuClientes();
-	int opcion_menu = Integer.parseInt(sc.nextLine());
+	int opcion_menu = 0;
 	
 	
 	do {		
+		Menuss.mostrarMenuClientes();
+		opcion_menu = Integer.parseInt(sc.nextLine());
 		switch (opcion_menu) {
 		case Menuss.DAR_DE_ALTA:
 			gbd.conectar();
