@@ -9,8 +9,10 @@ import Menus.Menuss;
 public class GestionClientes {
 
 	public static void run(Scanner sc){
-	int opcion_menu = Integer.parseInt(sc.nextLine());
 	GBDD gbd = new GBDD();
+	Menuss.mostrarMenuClientes();
+	int opcion_menu = Integer.parseInt(sc.nextLine());
+	
 	
 	do {		
 		switch (opcion_menu) {
