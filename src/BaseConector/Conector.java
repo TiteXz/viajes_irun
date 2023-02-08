@@ -12,19 +12,19 @@ public class Conector {
 	private static final String PASSWORD = "";
 
 	protected static Connection con;
-	
-	public void conectar() throws ClassNotFoundException {
-		try{
 
-		Class.forName("com.mysql.cj.jdbc.Driver");
-		this.con = DriverManager.getConnection("jdbc:mysql://" + HOST + "/" + BBDD, USERNAME, PASSWORD);
+	public void conectar(){
+		try {
 
-			
-		}catch(
-			SQLException e){
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			this.con = DriverManager.getConnection("jdbc:mysql://" + HOST + "/" + BBDD, USERNAME, PASSWORD);
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	public Connection getCon() {
@@ -35,7 +35,11 @@ public class Conector {
 		this.con = con;
 	}
 
-	public void cerrar() throws SQLException {
-		con.close();
+	public void cerrar() {
+		try {
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }
