@@ -8,8 +8,8 @@ import Menus.Menuss;
 
 public class GestionClientes {
 
-	public static void run(Scanner sc) throws SQLException, ClassNotFoundException {
-	int opcion_menu=0;
+	public static void run(Scanner sc){
+	int opcion_menu = Integer.parseInt(sc.nextLine());
 	GBDD gbd = new GBDD();
 	
 	do {		
