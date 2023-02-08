@@ -9,17 +9,24 @@ import Clases.Clientes;
 
 public class GBDD extends Conector{
 
-	public void darDeAltaCliente(Clientes cliente) throws ClassNotFoundException, SQLException {
+	public void darDeAltaCliente(Clientes cliente){
 		super.conectar();
-		PreparedStatement pst = con.prepareStatement("INSERT INTO clientes VALUES (?,?,?,?,?)");
-		pst.setString(1, cliente.getDni());
-		pst.setString(2, cliente.getNombre());
-		pst.setString(3, cliente.getApellido());
-		pst.setString(4, cliente.getDireccion());
-		pst.setString(5, cliente.getLocalidad());
+		PreparedStatement pst;
+		try {
+			pst = con.prepareStatement("INSERT INTO clientes VALUES (?,?,?,?,?)");
+			pst.setString(1, cliente.getDni());
+			pst.setString(2, cliente.getNombre());
+			pst.setString(3, cliente.getApellido());
+			pst.setString(4, cliente.getDireccion());
+			pst.setString(5, cliente.getLocalidad());
+			
+			pst.execute();
+			super.cerrar();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		pst.execute();
-		super.cerrar();
 		
 	}
 	
@@ -49,6 +56,18 @@ public class GBDD extends Conector{
 		super.cerrar();
 		
 		return cliente;
+		
+	}
+	
+	public void añadirHabitacion() {
+		
+	}
+	
+	public void hacerReserva(String id) throws ClassNotFoundException, SQLException {
+		super.conectar();
+		
+		
+		super.cerrar();
 		
 	}
 }

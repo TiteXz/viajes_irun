@@ -7,7 +7,7 @@ import Menus.Menuss;
 
 public class GestorViajes {
 
-	public static void run() throws ClassNotFoundException, SQLException {
+	public static void run() throws ClassNotFoundException, SQLException{
 		Scanner scan = new Scanner(System.in);
 		int opcion_menu;
 

@@ -8,7 +8,7 @@ import Menus.Menuss;
 
 public class GestionClientes {
 
-	public static void run(Scanner sc){
+	public static void run(Scanner sc) throws SQLException, ClassNotFoundException{
 	GBDD gbd = new GBDD();
 	int opcion_menu = 0;
 	
@@ -23,7 +23,8 @@ public class GestionClientes {
 			gbd.cerrar();
 			break;
 		case Menuss.DAR_DE_BAJA:
-			System.out.println("segunda opcion seleccionada\n");
+			gbd.conectar();
+			gbd.darDeBajaCliente(FormularioDatos.pedirDniCliente(sc));
 			break;
 		case Menuss.INFORMACION:
 			System.out.println("tercera opcion seleccionada\n");
