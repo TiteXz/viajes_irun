@@ -25,9 +25,12 @@ public class GestionClientes {
 		case Menuss.DAR_DE_BAJA:
 			gbd.conectar();
 			gbd.darDeBajaCliente(FormularioDatos.pedirDniCliente(sc));
+			gbd.cerrar();
 			break;
 		case Menuss.INFORMACION:
-			System.out.println("tercera opcion seleccionada\n");
+			gbd.conectar();
+			gbd.mostrarInfoCliente(FormularioDatos.pedirDniCliente(sc));
+			gbd.cerrar();
 			break;
 		case Menuss.SALIR:
 			System.out.println("ADIOS");
