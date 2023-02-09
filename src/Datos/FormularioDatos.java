@@ -25,9 +25,16 @@ public class FormularioDatos {
 	}
 	
 	public static String pedirDniCliente(Scanner sc) {
-		System.out.println("Cual es el dni del cliente");
+		System.out.println("Cual es el dni del cliente?");
 		String dni = sc.nextLine();
 		
 		return dni;
+	}
+	
+	public static int pedirIdHabitacion(Scanner sc) {
+		System.out.println("Cual es el id de la habitacion?");
+		int id = Integer.parseInt(sc.nextLine());
+		
+		return id;
 	}
 }
