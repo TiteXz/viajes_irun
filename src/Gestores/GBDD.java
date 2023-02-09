@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 import BaseConector.Conector;
 import Clases.Clientes;
+import Clases.Habitaciones;
 
 public class GBDD extends Conector{
 
@@ -43,14 +44,15 @@ public class GBDD extends Conector{
 	public Clientes mostrarInfoCliente(String dni) throws ClassNotFoundException, SQLException {
 		super.conectar();
 		Clientes cliente = new Clientes();
-		PreparedStatement pst = con.prepareStatement("SELECT FROM clientes WHERE dni = ?");
+		PreparedStatement pst = con.prepareStatement("SELECT * FROM clientes WHERE dni = ?");
 		pst.setString(1, dni);
 		ResultSet resultado = pst.executeQuery();
-		cliente.setDni(resultado.getString("dni"));
-		cliente.setNombre(resultado.getString("nombre"));
-		cliente.setApellido(resultado.getString("apellido"));
-		cliente.setDireccion(resultado.getString("direccion"));
-		cliente.setLocalidad(resultado.getString("localidad"));
+		
+	 while(resultado.next()) {
+		 System.out.println(("DNI: "+resultado.getString("dni"))+", NOMBRE: "+(resultado.getString("nombre"))+", APELLIDO: "+(resultado.getString("apellidos"))+", DIRECCION: "+(resultado.getString("direccion"))+", LOCALIDAD: "+(resultado.getString("localidad")));
+ }
+		
+		
 		
 		pst.execute();
 		super.cerrar();
@@ -59,8 +61,19 @@ public class GBDD extends Conector{
 		
 	}
 	
-	public void añadirHabitacion() {
+	public void ainadirHabitacion(Habitaciones habi) throws SQLException {
+		super.conectar();
 		
+		PreparedStatement pst = con.prepareStatement("INSERT INTO habitaciones VALUES (?,?,?,?,?)");
+		pst.setInt(1, habi.getId());
+		pst.setInt(2, habi.getId_hotel());
+		pst.setString(3, habi.getNumero());
+		pst.setString(4, habi.getDescripcion());
+		pst.setDouble(5, habi.getPrecio());
+		
+		pst.execute();
+		
+		super.cerrar();
 	}
 	
 	public void hacerReserva(String id) throws ClassNotFoundException, SQLException {
