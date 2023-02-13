@@ -25,7 +25,7 @@ public class GestorViajes {
 				GestorHabitaciones.run(scan);;
 				break;
 			case Menuss.GESTOR_HOTELES:
-				System.out.println("ADIOS");
+				GestorHoteles.run(scan);
 				break;
 			case Menuss.SALIR:
 				System.out.println("ADIOS");
