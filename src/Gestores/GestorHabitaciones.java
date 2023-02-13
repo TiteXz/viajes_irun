@@ -1,5 +1,6 @@
 package Gestores;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 import Datos.FormularioDatos;
@@ -7,7 +8,7 @@ import Menus.Menuss;
 
 public class GestorHabitaciones {
 
-	public static void run(Scanner sc) {
+	public static void run(Scanner sc) throws SQLException {
 		GBDD gbd = new GBDD();
 		int opcion_menu=0;
 		
@@ -17,12 +18,12 @@ public class GestorHabitaciones {
 			switch (opcion_menu) {
 			case Menuss.NUEVA_HABITACION:
 				gbd.conectar();
-				gbd.ainadirHabitacion(FormularioDatos.pedirIdHabitacion(sc));
+				gbd.ainadirHabitacion(FormularioDatos.pedirDatosHabitacion(sc));
 				gbd.cerrar();
 				break;
 			case Menuss.ELIMINAR_HABITACION:
 				gbd.conectar();
-				gbd.ainadirHabitacion();
+				gbd.eliminarHabitacion(FormularioDatos.pedirIdHabitacion(sc));
 				gbd.cerrar();
 				break;
 			case Menuss.SALIR:
