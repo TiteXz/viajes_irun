@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import BaseConector.Conector;
 import Clases.Clientes;
 import Clases.Habitaciones;
+import Clases.Hoteles;
 
 public class GBDD extends Conector{
 
@@ -99,14 +100,48 @@ public class GBDD extends Conector{
 		super.conectar();
 		try {
 		Habitaciones habi = new Habitaciones();
-		PreparedStatement pst = con.prepareStatement("SELECT FROM habitaciones WHERE id_hotel = ? ");
+		PreparedStatement pst = con.prepareStatement("SELECT * FROM habitaciones WHERE id_hotel = ? ");
 		pst.setInt(1, id);
 		ResultSet resultado = pst.executeQuery();
-		habi.setId(resultado.getInt(id));
+		resultado.next();
+		habi.setId(resultado.getInt("id"));
 		habi.setId_hotel(resultado.getInt("id_hotel"));
 		habi.setNumero(resultado.getString("numero"));
 		habi.setDescripcion(resultado.getString("descripcion"));
 		habi.setPrecio(resultado.getDouble("precio"));
+		
+		pst.execute();
+		super.cerrar();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void nuevoHotel(Hoteles hotel) {
+		super.conectar();
+		try {
+		PreparedStatement pst = con.prepareStatement("INSERT INTO hoteles (cif,nombre,gerente,estrellas,compania) VALUES (?,?,?,?,?)");
+		pst.setString(1, hotel.getCif());
+		pst.setString(2, hotel.getNombre());
+		pst.setString(3, hotel.getGerente());
+		pst.setInt(4, hotel.getEstrellas());
+		pst.setString(5, hotel.getCompania());
+		
+		pst.execute();
+		
+		super.cerrar();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void eliminarHotel(int id) throws SQLException {
+		super.conectar();
+		try {
+		PreparedStatement pst = con.prepareStatement("DELETE FROM hoteles WHERE id = ? ");
+		pst.setInt(1, id);
 		
 		pst.execute();
 		super.cerrar();
