@@ -21,6 +21,7 @@ public class Menuss {
 	
 	public final static int NUEVA_HABITACION = 1;
 	public final static int ELIMINAR_HABITACION = 2;
+	public final static int MOSTRAR_HABITACIONES = 3;
 	
 	public final static int SALIR = 0;
 
@@ -64,6 +65,7 @@ public class Menuss {
 		System.out.println("------MENU-------");
 		System.out.println(NUEVA_HABITACION + ". Añadir una habitación");
 		System.out.println(ELIMINAR_HABITACION + ". Eliminar una habitación");
+		System.out.println(MOSTRAR_HABITACIONES + "Mostrar habitaciones");
 		System.out.println(SALIR + ". Salir");
 		System.out.println("Elije una de las opciones");
 	}	
