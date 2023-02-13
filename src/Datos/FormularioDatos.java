@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import Clases.Clientes;
 import Clases.Habitaciones;
+import Clases.Hoteles;
 
 public class FormularioDatos {
 
@@ -49,6 +50,25 @@ public class FormularioDatos {
 		return habi;
 		
 	}
+	
+	public static Hoteles pedirDatosHotel(Scanner sc){
+		Hoteles hotel = new Hoteles();
+		
+		System.out.println("¿Cual es el cif del hotel?");
+		hotel.setCif(sc.nextLine());
+		System.out.println("¿Cual es el nombre del hotel?");
+		hotel.setNombre(sc.nextLine());
+		System.out.println("¿Quien es el gerente del hotel?");
+		hotel.setGerente(sc.nextLine());
+		System.out.println("¿Cuantas estrellas tiene el hotel?");
+		hotel.setEstrellas(Integer.parseInt(sc.nextLine()));
+		System.out.println("¿Cual es el nombre de la compania del hotel?");
+		hotel.setCompania(sc.nextLine());
+		
+		return hotel;
+		
+	}
+	
 	
 	public static int pedirIdHotel(Scanner sc) {
 		System.out.println("Cual es el id del hotel?");
