@@ -61,9 +61,9 @@ public class GBDD extends Conector{
 		
 	}
 	
-	public void ainadirHabitacion(Habitaciones habi) throws SQLException {
+	public void ainadirHabitacion(Habitaciones habi) {
 		super.conectar();
-		
+		try {
 		PreparedStatement pst = con.prepareStatement("INSERT INTO habitaciones VALUES (?,?,?,?,?)");
 		pst.setInt(1, habi.getId());
 		pst.setInt(2, habi.getId_hotel());
@@ -74,6 +74,47 @@ public class GBDD extends Conector{
 		pst.execute();
 		
 		super.cerrar();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void eliminarHabitacion(int id) throws SQLException {
+		super.conectar();
+		try {
+		PreparedStatement pst = con.prepareStatement("DELETE FROM habitaciones WHERE id = ? ");
+		pst.setInt(1, id);
+		
+		pst.execute();
+		super.cerrar();
+		super.cerrar();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void mostrarHabitaciones(int id) {
+		super.conectar();
+		try {
+		Habitaciones habi = new Habitaciones();
+		PreparedStatement pst = con.prepareStatement("SELECT FROM habitaciones WHERE id_hotel = ? ");
+		pst.setInt(1, id);
+		ResultSet resultado = pst.executeQuery();
+		habi.setId(resultado.getInt(id));
+		habi.setId_hotel(resultado.getInt("id_hotel"));
+		habi.setNumero(resultado.getString("numero"));
+		habi.setDescripcion(resultado.getString("descripcion"));
+		habi.setPrecio(resultado.getDouble("precio"));
+		
+		pst.execute();
+		super.cerrar();
+		super.cerrar();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void hacerReserva(String id) throws ClassNotFoundException, SQLException {
