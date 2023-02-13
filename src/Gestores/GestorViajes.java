@@ -22,7 +22,7 @@ public class GestorViajes {
 				System.out.println("segunda opcion seleccionada\n");
 				break;
 			case Menuss.GESTOR_HABITACIONES:
-				System.out.println("tercera opcion seleccionada\n");
+				GestorHabitaciones.run(scan);;
 				break;
 			case Menuss.GESTOR_HOTELES:
 				System.out.println("ADIOS");
