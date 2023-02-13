@@ -21,7 +21,7 @@ public class Menuss {
 	
 	public final static int NUEVA_HABITACION = 1;
 	public final static int ELIMINAR_HABITACION = 2;
-	public final static int MOSTRAR_HABITACIONES = 3;
+	public final static int MOSTRAR_HABITACIONES= 3;
 	
 	public final static int SALIR = 0;
 
