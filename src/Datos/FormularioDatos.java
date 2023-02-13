@@ -50,6 +50,13 @@ public class FormularioDatos {
 		
 	}
 	
+	public static int pedirIdHotel(Scanner sc) {
+		System.out.println("Cual es el id del hotel?");
+		int id = Integer.parseInt(sc.nextLine());
+		
+		return id;
+	}
+	
 	public static int pedirIdHabitacion(Scanner sc) {
 		System.out.println("Cual es el id de la habitacion?");
 		int id = Integer.parseInt(sc.nextLine());
