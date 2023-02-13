@@ -26,6 +26,11 @@ public class GestorHabitaciones {
 				gbd.eliminarHabitacion(FormularioDatos.pedirIdHabitacion(sc));
 				gbd.cerrar();
 				break;
+			case Menuss.MOSTRAR_HABITACIONES:
+				gbd.conectar();
+				gbd.mostrarHabitaciones(FormularioDatos.pedirIdHotel(sc));
+				gbd.cerrar();
+				break;
 			case Menuss.SALIR:
 				System.out.println("ADIOS");
 				break;
