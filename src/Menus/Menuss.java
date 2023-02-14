@@ -18,6 +18,7 @@ public class Menuss {
 	
 	public final static int NUEVO_HOTEL = 1;
 	public final static int ELIMINAR_HOTEL = 2;
+	public final static int MOSTRAR_HOTELES = 2;
 	
 	public final static int NUEVA_HABITACION = 1;
 	public final static int ELIMINAR_HABITACION = 2;
@@ -57,6 +58,7 @@ public class Menuss {
 		System.out.println("------MENU-------");
 		System.out.println(NUEVO_HOTEL + ". Añadir un nuevo hotel");
 		System.out.println(ELIMINAR_HOTEL + ". Eliminar un hotel");
+		System.out.println(MOSTRAR_HOTELES+ ". Mostrar un hotel");
 		System.out.println(SALIR + ". Salir");
 		System.out.println("Elije una de las opciones");
 	}	
@@ -65,7 +67,7 @@ public class Menuss {
 		System.out.println("------MENU-------");
 		System.out.println(NUEVA_HABITACION + ". Añadir una habitación");
 		System.out.println(ELIMINAR_HABITACION + ". Eliminar una habitación");
-		System.out.println(MOSTRAR_HABITACIONES + "Mostrar habitaciones");
+		System.out.println(MOSTRAR_HABITACIONES + ". Mostrar habitaciones");
 		System.out.println(SALIR + ". Salir");
 		System.out.println("Elije una de las opciones");
 	}	
