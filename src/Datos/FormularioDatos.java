@@ -5,6 +5,7 @@ import java.util.Scanner;
 import Clases.Clientes;
 import Clases.Habitaciones;
 import Clases.Hoteles;
+import Clases.Reservas;
 
 public class FormularioDatos {
 
@@ -82,5 +83,22 @@ public class FormularioDatos {
 		int id = Integer.parseInt(sc.nextLine());
 		
 		return id;
+	}
+	
+	public static Reservas pedirDatorReserva(Scanner sc) {
+		Reservas reserva = new Reservas();
+		
+		System.out.println("Cuál es el id de la habitación que deseas?");
+		reserva.setId_habitacion(Integer.parseInt(sc.nextLine()));
+		System.out.println("Cuál es el dni del cliente?");
+		reserva.setDni(sc.nextLine());
+		System.out.println("En que fecha quiere reservar la habitación?");
+		//reserva.setDesde(sc.nextLine());
+		System.out.println("Cuál que fecha desea irse del hotel?");
+		//reserva.setHasta(Integer.parseInt(sc.nextLine()));
+		
+		
+		return reserva;
+		
 	}
 }
