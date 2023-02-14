@@ -3,6 +3,7 @@ package Gestores;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import BaseConector.Conector;
 import Clases.Clientes;
@@ -96,26 +97,32 @@ public class GBDD extends Conector{
 		}
 	}
 	
-	public void mostrarHabitaciones(int id) {
+	public ArrayList<Habitaciones> mostrarHabitaciones() {
 		super.conectar();
+		ArrayList<Habitaciones> habitaciones = new ArrayList<Habitaciones>();
 		try {
-		Habitaciones habi = new Habitaciones();
-		PreparedStatement pst = con.prepareStatement("SELECT * FROM habitaciones WHERE id_hotel = ? ");
-		pst.setInt(1, id);
-		ResultSet resultado = pst.executeQuery();
-		resultado.next();
-		habi.setId(resultado.getInt("id"));
-		habi.setId_hotel(resultado.getInt("id_hotel"));
-		habi.setNumero(resultado.getString("numero"));
-		habi.setDescripcion(resultado.getString("descripcion"));
-		habi.setPrecio(resultado.getDouble("precio"));
 		
+		PreparedStatement pst = con.prepareStatement("SELECT * FROM habitaciones");
+		ResultSet resultado = pst.executeQuery();
+		while(resultado.next()){
+			Habitaciones habi = new Habitaciones();
+			habi.setId(resultado.getInt("id"));
+			habi.setId_hotel(resultado.getInt("id_hotel"));
+			habi.setNumero(resultado.getString("numero"));
+			habi.setDescripcion(resultado.getString("descripcion"));
+			habi.setPrecio(resultado.getDouble("precio"));
+		
+		
+			habitaciones.add(habi);
+		}
 		pst.execute();
 		super.cerrar();
+		
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return habitaciones;
 	}
 	
 	public void nuevoHotel(Hoteles hotel) {
