@@ -58,7 +58,7 @@ public class Menuss {
 		System.out.println("------MENU-------");
 		System.out.println(NUEVO_HOTEL + ". Añadir un nuevo hotel");
 		System.out.println(ELIMINAR_HOTEL + ". Eliminar un hotel");
-		System.out.println(MOSTRAR_HOTELES+ ". Mostrar un hotel");
+		System.out.println(MOSTRAR_HOTELES+ ". Mostrar hoteles");
 		System.out.println(SALIR + ". Salir");
 		System.out.println("Elije una de las opciones");
 	}	
