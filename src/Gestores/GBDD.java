@@ -203,7 +203,7 @@ public class GBDD extends Conector{
 			hotel.setCif(resultado.getString("Cif"));
 			hotel.setNombre(resultado.getString("nombre"));
 			hotel.setEstrellas(resultado.getInt("estrellas"));
-			hotel.setCompania(resultado.getString("compañia"));
+			hotel.setCompania(resultado.getString("compania"));
 			
 			hoteles.add(hotel);
 			
