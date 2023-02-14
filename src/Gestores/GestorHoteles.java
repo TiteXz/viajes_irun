@@ -27,7 +27,7 @@ public class GestorHoteles {
 				gbd.eliminarHotel(FormularioDatos.pedirIdHotel(sc));
 				gbd.cerrar();
 				break;
-			case Menuss.MOSTRAR_HABITACIONES:
+			case Menuss.MOSTRAR_HOTELES:
 				gbd.conectar();
 				Visor.mostrarHoteles(gbd.mostrarHoteles());
 				gbd.cerrar();
