@@ -19,7 +19,7 @@ public class GestorViajes {
 				GestionClientes.run(scan);
 				break;
 			case Menuss.GESTOR_RESERVAS:
-				System.out.println("segunda opcion seleccionada\n");
+				GestorReservas.run(scan);
 				break;
 			case Menuss.GESTOR_HABITACIONES:
 				GestorHabitaciones.run(scan);;
