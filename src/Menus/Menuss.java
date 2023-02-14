@@ -18,7 +18,7 @@ public class Menuss {
 	
 	public final static int NUEVO_HOTEL = 1;
 	public final static int ELIMINAR_HOTEL = 2;
-	public final static int MOSTRAR_HOTELES = 2;
+	public final static int MOSTRAR_HOTELES = 3;
 	
 	public final static int NUEVA_HABITACION = 1;
 	public final static int ELIMINAR_HABITACION = 2;
