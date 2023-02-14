@@ -9,6 +9,7 @@ import BaseConector.Conector;
 import Clases.Clientes;
 import Clases.Habitaciones;
 import Clases.Hoteles;
+import Clases.Reservas;
 
 public class GBDD extends Conector{
 
@@ -238,11 +239,22 @@ public class GBDD extends Conector{
 //		
 //	}
 	
-	public void hacerReserva(String id) throws ClassNotFoundException, SQLException {
+	public void hacerReserva(Reservas reserva) {
 		super.conectar();
-		
-		
-		super.cerrar();
+		try {
+			PreparedStatement pst = con.prepareStatement("INSERT INTO reservas (id_habitacion,dni,desde,hasta) VALUES (null,?,?,?,?)");
+			pst.setInt(1, reserva.getId_habitacion());
+			pst.setString(2, reserva.getDni());
+			pst.setDate(3, reserva.getDesde());
+			pst.setDate(4, reserva.getHasta());
+			
+			pst.execute();
+			
+			super.cerrar();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		
 	}
 }
