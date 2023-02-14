@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import Datos.FormularioDatos;
 import Menus.Menuss;
+import Menus.Visor;
 
 public class GestorHabitaciones {
 
@@ -28,7 +29,7 @@ public class GestorHabitaciones {
 				break;
 			case Menuss.MOSTRAR_HABITACIONES:
 				gbd.conectar();
-				gbd.mostrarHabitaciones(FormularioDatos.pedirIdHotel(sc));
+				Visor.mostrarHabitaciones(gbd.mostrarHabitaciones());
 				gbd.cerrar();
 				break;
 			case Menuss.SALIR:
