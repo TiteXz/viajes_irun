@@ -1,6 +1,6 @@
 package Clases;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Reservas {
 
@@ -50,16 +50,16 @@ public class Reservas {
 		return desde;
 	}
 
-	public void setDesde(Date desde) {
-		this.desde = desde;
+	public void setDesde(java.util.Date date) {
+		this.desde = (Date) date;
 	}
 
 	public Date getHasta() {
 		return hasta;
 	}
 
-	public void setHasta(Date hasta) {
-		this.hasta = hasta;
+	public void setHasta(java.util.Date date) {
+		this.hasta = (Date) date;
 	}
 
 	@Override
