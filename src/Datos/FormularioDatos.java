@@ -1,5 +1,7 @@
 package Datos;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
 import Clases.Clientes;
@@ -85,17 +87,18 @@ public class FormularioDatos {
 		return id;
 	}
 	
-	public static Reservas pedirDatorReserva(Scanner sc) {
+	public static Reservas pedirDatorReserva(Scanner sc) throws ParseException {
 		Reservas reserva = new Reservas();
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		
 		System.out.println("Cuál es el id de la habitación que deseas?");
 		reserva.setId_habitacion(Integer.parseInt(sc.nextLine()));
 		System.out.println("Cuál es el dni del cliente?");
 		reserva.setDni(sc.nextLine());
 		System.out.println("En que fecha quiere reservar la habitación?");
-		//reserva.setDesde(sc.nextLine());
+		reserva.setDesde(sdf.parse(sc.nextLine()));
 		System.out.println("Cuál que fecha desea irse del hotel?");
-		//reserva.setHasta(Integer.parseInt(sc.nextLine()));
+		reserva.setHasta(sdf.parse(sc.nextLine()));
 		
 		
 		return reserva;
