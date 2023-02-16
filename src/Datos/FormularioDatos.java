@@ -8,6 +8,8 @@ import Clases.Clientes;
 import Clases.Habitaciones;
 import Clases.Hoteles;
 import Clases.Reservas;
+import Gestores.GBDD;
+import Menus.Visor;
 
 public class FormularioDatos {
 
@@ -90,6 +92,9 @@ public class FormularioDatos {
 	public static Reservas pedirDatorReserva(Scanner sc) throws ParseException {
 		Reservas reserva = new Reservas();
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		GBDD gbd = new GBDD();
+		
+		Visor.mostrarHabitaciones(gbd.mostrarHabitaciones());
 		
 		System.out.println("Cuál es el id de la habitación que deseas?");
 		reserva.setId_habitacion(Integer.parseInt(sc.nextLine()));
