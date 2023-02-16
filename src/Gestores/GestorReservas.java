@@ -1,6 +1,7 @@
 package Gestores;
 
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.Scanner;
 
 import Datos.FormularioDatos;
@@ -9,15 +10,17 @@ import Menus.Menuss;
 public class GestorReservas {
 
 	
-	public static void run(Scanner sc) throws ClassNotFoundException, SQLException {
+	public static void run(Scanner sc) throws ClassNotFoundException, SQLException, ParseException {
 		int opcion_menu=0;
 		GBDD gbd = new GBDD();
 		
-		do {		
+		do {	
+			Menuss.mostrarMenuReservas();
+			opcion_menu = Integer.parseInt(sc.nextLine());
 			switch (opcion_menu) {
 			case Menuss.RESERVAR:
 				gbd.conectar();
-				//gbd.r(FormularioDatos.pedirDatosCliente(sc));
+				gbd.hacerReserva(FormularioDatos.pedirDatorReserva(sc));
 				gbd.cerrar();
 				break;
 			case Menuss.CANCELAR_RESERVA:
