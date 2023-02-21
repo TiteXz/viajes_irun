@@ -154,7 +154,6 @@ public class GBDD extends Conector{
 		
 		pst.execute();
 		super.cerrar();
-		super.cerrar();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -210,5 +209,19 @@ public class GBDD extends Conector{
 				e.printStackTrace();
 			}
 		
+	}
+	
+	public void cancelarReserva(int id) {
+		super.conectar();
+		try {
+		PreparedStatement pst = con.prepareStatement("DELETE FROM reservas WHERE id = ? ");
+		pst.setInt(1, id);
+		
+		pst.execute();
+		super.cerrar();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
