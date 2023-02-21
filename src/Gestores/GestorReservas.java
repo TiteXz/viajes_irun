@@ -24,7 +24,9 @@ public class GestorReservas {
 				gbd.cerrar();
 				break;
 			case Menuss.CANCELAR_RESERVA:
-				System.out.println("segunda opcion seleccionada\n");
+				gbd.conectar();
+				gbd.cancelarReserva(FormularioDatos.pediridReserva(sc));
+				gbd.cerrar();
 				break;
 			case Menuss.SALIR:
 				System.out.println("ADIOS");
