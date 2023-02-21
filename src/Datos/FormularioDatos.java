@@ -109,4 +109,11 @@ public class FormularioDatos {
 		return reserva;
 		
 	}
+	
+	public static int pediridReserva (Scanner sc) {
+		System.out.println("Cual es el id de la reserva?");
+		int id = Integer.parseInt(sc.nextLine());
+		
+		return id;
+	}
 }
