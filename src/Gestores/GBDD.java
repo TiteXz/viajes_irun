@@ -161,36 +161,7 @@ public class GBDD extends Conector{
 		}
 	}
 	
-//	public ArrayList<Habitaciones> mostrarHabitacionesDeHotel() {
-//		super.conectar();
-//		ArrayList<Habitaciones> habitaciones = new ArrayList<Habitaciones>();
-//		
-//		try {
-//		Habitaciones habi = new Habitaciones();
-//		PreparedStatement pst = con.prepareStatement("SELECT * FROM habitaciones WHERE id_hotel = ?");
-//		pst.setString(1, "id_hotel");
-//		ResultSet resultado = pst.executeQuery();
-//		while(resultado.next()){
-//			
-//			habi.setId(resultado.getInt("id"));
-//			habi.setId_hotel(resultado.getInt("id_hotel"));
-//			habi.setNumero(resultado.getString("numero"));
-//			habi.setDescripcion(resultado.getString("descripcion"));
-//			habi.setPrecio(resultado.getDouble("precio"));
-//		
-//		
-//			habitaciones.add(habi);
-//		}
-//		pst.execute();
-//		super.cerrar();
-//		
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		return habitaciones;
-//	}
-	
+
 	public ArrayList<Hoteles> mostrarHoteles() {
 		super.conectar();
 		ArrayList<Hoteles> hoteles = new ArrayList<Hoteles>();
@@ -220,25 +191,6 @@ public class GBDD extends Conector{
 		return hoteles;
 	}
 	
-//	public Clientes mostrarInfoCliente(String dni) throws ClassNotFoundException, SQLException {
-//		super.conectar();
-//		Clientes cliente = new Clientes();
-//		PreparedStatement pst = con.prepareStatement("SELECT * FROM clientes WHERE dni = ?");
-//		pst.setString(1, dni);
-//		ResultSet resultado = pst.executeQuery();
-//		
-//	 while(resultado.next()) {
-//		 System.out.println(("DNI: "+resultado.getString("dni"))+", NOMBRE: "+(resultado.getString("nombre"))+", APELLIDO: "+(resultado.getString("apellidos"))+", DIRECCION: "+(resultado.getString("direccion"))+", LOCALIDAD: "+(resultado.getString("localidad")));
-// }
-//		
-//		
-//		
-//		pst.execute();
-//		super.cerrar();
-//		
-//		return cliente;
-//		
-//	}
 	
 	public void hacerReserva(Reservas reserva) {
 		super.conectar();
