@@ -74,6 +74,7 @@ public class GBDD extends Conector{
 		pst.setString(3, habi.getNumero());
 		pst.setString(4, habi.getDescripcion());
 		pst.setDouble(5, habi.getPrecio());
+		System.out.println("Se ha añadido la habitación");
 		
 		pst.execute();
 		
@@ -89,6 +90,7 @@ public class GBDD extends Conector{
 		try {
 		PreparedStatement pst = con.prepareStatement("DELETE FROM habitaciones WHERE id = ? ");
 		pst.setInt(1, id);
+		System.out.println("Se ha eliminado la habitación");
 		
 		pst.execute();
 		super.cerrar();
@@ -136,6 +138,7 @@ public class GBDD extends Conector{
 		pst.setString(3, hotel.getGerente());
 		pst.setInt(4, hotel.getEstrellas());
 		pst.setString(5, hotel.getCompania());
+		System.out.println("Se ha añadido el hotel");
 		
 		pst.execute();
 		
@@ -151,6 +154,7 @@ public class GBDD extends Conector{
 		try {
 		PreparedStatement pst = con.prepareStatement("DELETE FROM hoteles WHERE id = ? ");
 		pst.setInt(1, id);
+		System.out.println("Se ha eliminado el hotel");
 		
 		pst.execute();
 		super.cerrar();
@@ -200,6 +204,7 @@ public class GBDD extends Conector{
 			pst.setString(3, reserva.getDni());
 			pst.setDate(4, new Date (reserva.getDesde().getTime()));
 			pst.setDate(5, new Date (reserva.getHasta().getTime()));
+			System.out.println("Se ha realizado la reserva");
 			
 			pst.execute();
 			
@@ -216,6 +221,7 @@ public class GBDD extends Conector{
 		try {
 		PreparedStatement pst = con.prepareStatement("DELETE FROM reservas WHERE id = ? ");
 		pst.setInt(1, id);
+		System.out.println("Se ha cancelado la reserva");
 		
 		pst.execute();
 		super.cerrar();
