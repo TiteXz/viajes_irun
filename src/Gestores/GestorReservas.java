@@ -20,6 +20,8 @@ public class GestorReservas {
 			switch (opcion_menu) {
 			case Menuss.RESERVAR:
 				gbd.conectar();
+				
+				//gbd.DniExiste(dni);
 				gbd.hacerReserva(FormularioDatos.pedirDatorReserva(sc));
 				gbd.cerrar();
 				break;
