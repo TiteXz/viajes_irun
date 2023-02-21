@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.sql.Date;
 
 import BaseConector.Conector;
@@ -63,6 +64,18 @@ public class GBDD extends Conector{
 		
 		return cliente;
 		
+	}
+	
+	public boolean DniExiste(String dni) throws SQLException {
+		boolean existe = true;
+		PreparedStatement pst = con.prepareStatement("SELECT dni FROM clientes WHERE dni = ?");
+		pst.setString(1, dni);
+		
+		if(dni.equals(dni)) {
+			existe = true;
+		}else existe = false;
+		
+		return existe;
 	}
 	
 	public void ainadirHabitacion(Habitaciones habi) {
