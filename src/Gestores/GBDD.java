@@ -243,4 +243,21 @@ public class GBDD extends Conector{
 			e.printStackTrace();
 		}
 	}
+	
+	public Reservas getReserva() {
+		super.conectar();
+		
+		
+		try {
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		super.cerrar();
+		
+		return null;
+		
+	}
 }
